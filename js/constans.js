@@ -27,3 +27,5 @@ export const MIN_COMMENTS = 0;
 export const MAX_COMMENTS = 30;
 export const MIN_LIKES = 15;
 export const MAX_LIKES = 200;
+
+export const COMMENTS_STEP = 5;
