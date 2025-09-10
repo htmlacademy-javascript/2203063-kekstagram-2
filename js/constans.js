@@ -29,3 +29,9 @@ export const MIN_LIKES = 15;
 export const MAX_LIKES = 200;
 
 export const COMMENTS_STEP = 5;
+
+export const MAX_DESCRIPTION = 140;
+
+export const HGASHTAG_FORMULA = /^#[a-zа-яё0-9]{1,19}$/i;
+
+export const MAX_HASHTAGS = 5;
