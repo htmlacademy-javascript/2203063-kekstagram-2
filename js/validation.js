@@ -1,4 +1,4 @@
-import { HASHTAG_FORMULA } from '../../../Nikolay/188075(1)/project-188075/js/constants.js';
+import { HASHTAG_FORMULA } from './constans.js';
 import { MAX_DESCRIPTION, MAX_HASHTAGS } from './constans.js';
 
 const formTag = document.querySelector('.img-upload__form');
@@ -49,7 +49,7 @@ pristine.addValidator(
 pristine.addValidator(
   hashtagsTag,
   checkHashtags,
-  'bebeebebe'
+  'Хештеги должны начинаться с символа решетки, другие спецсимволы использовать нельзя'
 );
 
 pristine.addValidator(
@@ -68,4 +68,3 @@ export const isValid = () => pristine.validate();
 export const resetValidation = () => {
   pristine.reset();
 };
-

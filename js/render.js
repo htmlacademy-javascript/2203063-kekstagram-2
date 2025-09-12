@@ -25,7 +25,7 @@ export const renderCards = (photos) => {
 containerTag.addEventListener('click', (evt) => {
   const card = evt.target.closest('.picture');
   if (card) {
-    const id  = Number(card.dataset.id);
+    const id = Number(card.dataset.id);
     const photo = localPhotos.find((item) => item.id === id);
     openModal(photo);
   }
