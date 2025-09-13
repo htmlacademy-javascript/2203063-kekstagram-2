@@ -1,12 +1,7 @@
-export const getRandomElement = (items) => items[getRandomInteger(0, items.length - 1)];
-const bodyTag = document.body;
+import { ALERT_DELAY } from './constans.js';
 
-export const getRandomInteger = (a, b) => {
-  const lower = Math.ceil(Math.min(a, b));
-  const upper = Math.floor(Math.max(a, b));
-  const result = Math.random() * (upper - lower + 1) + lower;
-  return Math.floor(result);
-};
+const bodyTag = document.body;
+const alertTemplate = document.querySelector('#data-error').content.querySelector('.data-error');
 
 export const showModal = (modalTag, isShown = true) => {
   if (isShown) {
@@ -17,3 +12,11 @@ export const showModal = (modalTag, isShown = true) => {
     bodyTag.classList.remove('modal-open');
   }
 };
+
+export const showAlert = () => {
+  const alert = alertTemplate.cloneNode(true);
+  bodyTag.append(alert);
+  setTimeout(() => {
+    alert.remove();
+  }, ALERT_DELAY)
+}
