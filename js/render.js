@@ -6,7 +6,6 @@ const cardTemplate = document.querySelector('#picture').content.querySelector('.
 let localPhotos;
 
 export const renderCards = (photos) => {
-  console.log(photos);
   localPhotos = [...photos];
   const fragment = document.createDocumentFragment();
   photos.forEach(({ url, description, comments, likes, id }) => {

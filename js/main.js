@@ -1,6 +1,12 @@
-import { getPhotos } from "./data.js";
 import { renderCards } from "./render.js";
 import './form.js';
+import { showAlert } from "./utils.js";
+import { getData } from "./api.js";
 
-const pictures = getPhotos();
-renderCards (pictures)
+getData()
+  .then((photos) => {
+    renderCards(photos);
+  })
+  .catch(() => {
+    showAlert();
+  })
