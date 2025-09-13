@@ -5,7 +5,14 @@ const cardTemplate = document.querySelector('#picture').content.querySelector('.
 
 let localPhotos;
 
+const clear = () => {
+  document.querySelectorAll('.picture').forEach((item) => {
+    item.remove();
+  });
+};
+
 export const renderCards = (photos) => {
+  clear();
   localPhotos = [...photos];
   const fragment = document.createDocumentFragment();
   photos.forEach(({ url, description, comments, likes, id }) => {
@@ -28,4 +35,4 @@ containerTag.addEventListener('click', (evt) => {
     const photo = localPhotos.find((item) => item.id === id);
     openModal(photo);
   }
-})
+});

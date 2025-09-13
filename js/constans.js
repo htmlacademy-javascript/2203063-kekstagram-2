@@ -92,4 +92,13 @@ export const Popups = {
 export const SubmitButtonText = {
   SENDING: 'Публикую...',
   IDLE: 'Опубликовать'
-}
+};
+
+export const Filters = {
+  DEFAULT: 'filter-default',
+  RANDOM: 'filter-random',
+  DISCUSSED: 'filter-discussed'
+};
+
+export const RANDOM_FACTOR = 0.5;
+export const RANDOM_COUNT = 10;

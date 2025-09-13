@@ -1,4 +1,5 @@
 import { COMMENTS_STEP } from './constans.js';
+import { removeEscapeControle, setEscapeControle } from './escape-control.js';
 import { showModal } from './utils.js';
 
 const modalTag = document.querySelector('.big-picture');
@@ -58,10 +59,14 @@ const render = ({ url, description, comments, likes }) => {
 export const openModal = ({ url, description, comments, likes }) => {
   showModal(modalTag);
   render({ url, description, comments, likes });
+  setEscapeControle(()=>{
+    showModal(modalTag, false);
+  });
 };
 
 closeButtonTag.addEventListener('click', () => {
   showModal(modalTag, false);
+  removeEscapeControle();
 });
 
 loaderTag.addEventListener('click', () => {
