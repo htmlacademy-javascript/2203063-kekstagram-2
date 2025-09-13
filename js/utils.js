@@ -18,5 +18,13 @@ export const showAlert = () => {
   bodyTag.append(alert);
   setTimeout(() => {
     alert.remove();
-  }, ALERT_DELAY)
-}
+  }, ALERT_DELAY);
+};
+
+export const debounce = (callback, timeoutDelay = 500) => {
+  let timeoutId;
+  return (...rest) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
+  };
+};

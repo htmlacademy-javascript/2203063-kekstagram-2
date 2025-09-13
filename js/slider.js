@@ -1,4 +1,4 @@
-import { EffectsSettings } from "./constans";
+import { EffectsSettings } from './constans.js';
 
 const sliderTag = document.querySelector('.effect-level__slider');
 const levelControlTag = document.querySelector('.effect-level__value');
@@ -28,9 +28,8 @@ export const updateSlider = (settings) => {
 
 export const renderEffect = () => {
   const currentEffect = document.querySelector('.effects__radio:checked').value;
-  console.log(currentEffect)
   const { style, units } = EffectsSettings[currentEffect];
-  previewTag.style.filter = `${style}(${levelControlTag.value}${units})`
+  previewTag.style.filter = `${style}(${levelControlTag.value}${units})`;
 };
 
 sliderTag.noUiSlider.on('update', () => {
@@ -44,4 +43,4 @@ export const showSlider = (isVisible = true) => {
   } else {
     effectContainerTag.classList.add('hidden');
   }
-}
+};

@@ -3,7 +3,6 @@ import { showSlider, updateSlider } from './slider.js';
 
 const effectsListTag = document.querySelector('.effects__list');
 const previewTag = document.querySelector('.img-upload__preview img');
-const levelControlTag = document.querySelector('.effect-level__value');
 
 let currentEffect = Effects.NONE;
 
@@ -20,9 +19,9 @@ effectsListTag.addEventListener('change', ({ target }) => {
   currentEffect = target.value;
   const { slider } = EffectsSettings[target.value];
   if (isDefaultEffect()) {
-    resetEffects()
+    resetEffects();
   } else {
-    updateSlider(slider)
+    updateSlider(slider);
     showSlider(!isDefaultEffect());
   }
 });

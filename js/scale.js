@@ -10,7 +10,7 @@ let currentScale = Scale.DEFAULT;
 const render = () => {
   controlTag.value = `${currentScale}%`;
   previewTag.style.transform = `scale(${currentScale}%)`;
-}
+};
 
 minusTag.addEventListener('click', () => {
   currentScale = currentScale > Scale.MIN ? currentScale - Scale.STEP : Scale.MIN;
